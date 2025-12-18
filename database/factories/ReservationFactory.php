@@ -17,7 +17,13 @@ class ReservationFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'user_id' => fake()->numberBetween(1, 10),
+            'resource_id' => fake()->numberBetween(1, 10),
+            'start_time' => fake()->dateTime(),
+            'end_time' => fake()->dateTime(),
+            'purpose' => "Formações",
+            'participants_count' => fake()->numberBetween(10, 50),
+            'status' => fake()->randomElement(['pendente', 'aprovado', 'cancelado']),
         ];
     }
 }

@@ -17,7 +17,11 @@ class ResourceFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'name' => "Sala " . fake()->name(),
+            'type' => fake()->randomElement(['Sala', 'Lab']),
+            'capacity' => fake()->randomNumber(2),
+            'location' => fake()->address(),
+            'active' => fake()->boolean()
         ];
     }
 }
